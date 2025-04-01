@@ -1,0 +1,295 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  font-size: large;
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: var(--Grey200);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  --Green400: hsl(172, 67%, 45%);
+
+  --Green900: hsl(183, 100%, 15%);
+  --Grey500: hsl(186, 14%, 43%);
+  --Grey400: hsl(186, 14%, 56%);
+  --Grey200: hsl(185, 41%, 84%);
+  --Grey50: hsl(189, 47%, 97%);
+  --White: hsl(0, 100%, 100%);
+}
+
+header {
+  color: var(--Green900);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5em;
+  margin-bottom: 2rem;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  width: 800px;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: var(--White);
+}
+/* left table */
+.left {
+  width: 50%;
+}
+
+.inputTable {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+/* right table */
+
+input[type="number"] {
+  margin-bottom: 1.5rem;
+  width: 90%;
+  font-weight: 700;
+  font-size: larger;
+  text-align: right;
+  border: none;
+  color: var(--Green900);
+  background-color: var(--Grey50);
+  padding: 5px; /* Add some padding */
+}
+
+::-webkit-input-placeholder {
+  /* Chrome, Safari, Opera */
+  text-align: left;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  font-weight: 700;
+  text-align: center;
+  margin: 0.25rem;
+  padding: 1rem 0.5rem;
+  width: 100px;
+  color: var(--White);
+  background-color: var(--Green900);
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  color: var(--Green900);
+  background-color: var(--Green400);
+}
+/* Active tip button style */
+.tip-btn.active {
+  background-color: var(--Green400);
+  color: var(--Green900);
+}
+
+.bill,
+.tip,
+.people {
+  font-size: smaller;
+  font-weight: 700;
+  color: var(--Grey500);
+}
+
+.right {
+  width: 50%;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--Green900);
+}
+
+.summaryTable {
+  height: 100%;
+  width: 100%;
+}
+
+#reset {
+  margin: 0;
+  width: 100%;
+  color: var(--Green900);
+  background-color: darkcyan;
+}
+
+.amount,
+.total {
+  color: var(--White);
+}
+
+.gross {
+  text-align: right;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--Green400);
+}
+
+#custom-tip {
+  padding: 0.5rem;
+  text-align: right;
+  min-width: auto;
+  margin: 1rem 0;
+  color: var(--Green500);
+  background-color: var(--Grey50);
+  border-radius: 10px;
+}
+
+.other {
+  color: var(--Grey200);
+  font-size: smaller;
+}
+
+.t {
+  text-align: left;
+  font-size: smaller;
+  font-weight: 700;
+  color: var(--White);
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 575px) {
+  main {
+    width: auto;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .left {
+    width: auto;
+  }
+
+  .right {
+    width: auto;
+  }
+
+  button {
+  }
+
+  #custom-tip {
+  }
+}
+
+/* Small devices (larger phones) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Styles for small tablets */
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles for tablets */
+}
+
+/* Large devices (laptops, small desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Styles for laptops */
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) {
+  /* Styles for big screens */
+}

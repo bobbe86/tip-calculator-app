@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <header>SPLI<br />TTER</header>
+    <main>
+      <div class="left">
+        <label class="bill">Bill</label><br />
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          placeholder="$"
+          step="0.01"
+        /><br />
+        <!-- <label class="tip">Select Tip %</label>
+        <table class="inputTable">
+          <tr>
+            <td><button>5%</button></td>
+            <td><button>10%</button></td>
+            <td><button>15%</button></td>
+          </tr>
+          <tr>
+            <td><button>25%</button></td>
+            <td><button>50%</button></td>
+            <td><button class="custom">Custom</button></td>
+          </tr>
+        </table> -->
+
+        <label class="tip">Select Tip %</label>
+        <table class="inputTable">
+          <tr>
+            <td><button class="tip-btn" data-tip="5">5%</button></td>
+            <td><button class="tip-btn" data-tip="10">10%</button></td>
+            <td><button class="tip-btn" data-tip="15">15%</button></td>
+          </tr>
+          <tr>
+            <td><button class="tip-btn" data-tip="25">25%</button></td>
+            <td><button class="tip-btn" data-tip="50">50%</button></td>
+            <td>
+              <input type="number" id="custom-tip" placeholder="Custom" />
+            </td>
+          </tr>
+        </table>
+
+        <label class="people">Number of People</label><br />
+        <input type="number" name="diners" id="diners" placeholder="♟" />
+      </div>
+      <div class="right">
+        <table class="summaryTable">
+          <tr>
+            <td class="t">
+              Tip Amount
+              <div class="other">/ person</div>
+            </td>
+            <td>
+              <div class="gross">$0.00</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="t">
+              Total
+              <div class="other">/ person</div>
+            </td>
+            <td>
+              <div class="gross">$0.00</div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center">
+              <button id="reset">Reset</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
